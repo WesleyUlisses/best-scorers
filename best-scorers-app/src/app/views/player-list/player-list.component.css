@@ -1,0 +1,28 @@
+h1{
+    font-family: 'Saira Semi Condensed', sans-serif;
+    color: #e9cc74;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px #343434;
+    
+}
+
+.best-scorers-list{
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+    align-items: center;
+
+}
+
+@media screen and (min-width: 768px){
+    
+    .best-scorers-list{
+        justify-content: space-between;
+    }
+    
+}

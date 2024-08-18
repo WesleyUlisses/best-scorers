@@ -1,0 +1,828 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Player API",
+        "version": "1.0.0",
+        "description": "Documentação da API para gerenciar jogadores"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Servidor local"
+        }
+    ],
+    "paths": {
+        "/create": {
+            "post": {
+                "summary": "Cria um novo jogador",
+                "description": "Adiciona um novo jogador ao banco de dados",
+                "requestBody": {
+                    "description": "Dados do jogador a ser criado",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "João Silva"
+                                    },
+                                    "position": {
+                                        "type": "string",
+                                        "example": "Atacante"
+                                    },
+                                    "age": {
+                                        "type": "integer",
+                                        "example": 25
+                                    },
+                                    "goals": {
+                                        "type": "integer",
+                                        "example": 12
+                                    },
+                                    "assists": {
+                                        "type": "integer",
+                                        "example": 8
+                                    },
+                                    "yellowCards": {
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "redCards": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "taxId": {
+                                        "type": "string",
+                                        "example": "12345678900"
+                                    },
+                                    "profilePictureUrl": {
+                                        "type": "string",
+                                        "description": "URL da foto de perfil do jogador",
+                                        "example": "https://example.com/profile.jpg"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Jogador criado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro ao criar jogador"
+                    }
+                }
+            }
+        },
+        "/update": {
+            "put": {
+                "summary": "Atualiza um jogador existente",
+                "description": "Atualiza os dados de um jogador existente com base no ID",
+                "requestBody": {
+                    "description": "Dados do jogador a serem atualizados",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "_id": {
+                                        "type": "string",
+                                        "description": "ID do jogador",
+                                        "example": "66c12b2b6dc8b2690ff1ed42"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "João Silva"
+                                    },
+                                    "position": {
+                                        "type": "string",
+                                        "example": "Atacante"
+                                    },
+                                    "age": {
+                                        "type": "integer",
+                                        "example": 25
+                                    },
+                                    "goals": {
+                                        "type": "integer",
+                                        "example": 12
+                                    },
+                                    "assists": {
+                                        "type": "integer",
+                                        "example": 8
+                                    },
+                                    "yellowCards": {
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "redCards": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "taxId": {
+                                        "type": "string",
+                                        "example": "12345678900"
+                                    },
+                                    "profilePictureUrl": {
+                                        "type": "string",
+                                        "description": "URL da foto de perfil do jogador",
+                                        "example": "https://example.com/profile.jpg"
+                                    }
+                                },
+                                "required": [
+                                    "_id"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Jogador atualizado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string",
+                                            "description": "ID do jogador atualizado",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "João Silva"
+                                        },
+                                        "position": {
+                                            "type": "string",
+                                            "example": "Atacante"
+                                        },
+                                        "age": {
+                                            "type": "integer",
+                                            "example": 25
+                                        },
+                                        "goals": {
+                                            "type": "integer",
+                                            "example": 12
+                                        },
+                                        "assists": {
+                                            "type": "integer",
+                                            "example": 8
+                                        },
+                                        "yellowCards": {
+                                            "type": "integer",
+                                            "example": 3
+                                        },
+                                        "redCards": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "taxId": {
+                                            "type": "string",
+                                            "example": "12345678900"
+                                        },
+                                        "profilePictureUrl": {
+                                            "type": "string",
+                                            "description": "URL da foto de perfil do jogador",
+                                            "example": "https://example.com/profile.jpg"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro ao atualizar jogador"
+                    }
+                }
+            }
+        },
+        "/updateGoals/{id}": {
+            "put": {
+                "summary": "Atualiza os gols de um jogador",
+                "description": "Atualiza o número de gols de um jogador existente com base no ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "66c12b2b6dc8b2690ff1ed42"
+                        },
+                        "description": "ID do jogador cujos gols serão atualizados."
+                    }
+                ],
+                "requestBody": {
+                    "description": "Número de gols a ser adicionado ao jogador.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "goals": {
+                                        "type": "integer",
+                                        "example": 5
+                                    }
+                                },
+                                "required": [
+                                    "goals"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Jogador atualizado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string",
+                                            "description": "ID do jogador atualizado",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        },
+                                        "goals": {
+                                            "type": "integer",
+                                            "description": "Número atualizado de gols",
+                                            "example": 17
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro ao atualizar gols"
+                    },
+                    "404": {
+                        "description": "Jogador não encontrado"
+                    }
+                }
+            }
+        },
+        "/get/{id}": {
+            "get": {
+                "summary": "Obtém um jogador pelo ID",
+                "description": "Retorna os detalhes de um jogador com base no ID fornecido.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "66c12b2b6dc8b2690ff1ed42"
+                        },
+                        "description": "ID do jogador a ser recuperado."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Jogador encontrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string",
+                                            "description": "ID do jogador",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Nome do jogador",
+                                            "example": "João Silva"
+                                        },
+                                        "position": {
+                                            "type": "string",
+                                            "description": "Posição do jogador",
+                                            "example": "Atacante"
+                                        },
+                                        "age": {
+                                            "type": "integer",
+                                            "description": "Idade do jogador",
+                                            "example": 25
+                                        },
+                                        "goals": {
+                                            "type": "integer",
+                                            "description": "Número de gols do jogador",
+                                            "example": 12
+                                        },
+                                        "assists": {
+                                            "type": "integer",
+                                            "description": "Número de assistências do jogador",
+                                            "example": 8
+                                        },
+                                        "yellowCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões amarelos do jogador",
+                                            "example": 3
+                                        },
+                                        "redCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões vermelhos do jogador",
+                                            "example": 1
+                                        },
+                                        "taxId": {
+                                            "type": "string",
+                                            "description": "Número de identificação fiscal do jogador",
+                                            "example": "12345678900"
+                                        },
+                                        "profilePictureUrl": {
+                                            "type": "string",
+                                            "description": "URL da foto de perfil do jogador",
+                                            "example": "https://example.com/profile.jpg"
+                                        }
+                                    },
+                                    "required": [
+                                        "_id",
+                                        "name",
+                                        "position",
+                                        "age",
+                                        "goals",
+                                        "assists",
+                                        "yellowCards",
+                                        "redCards",
+                                        "taxId"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Jogador não encontrado"
+                    }
+                }
+            }
+        },
+        "/getAll": {
+            "get": {
+                "summary": "Obtém todos os jogadores",
+                "description": "Retorna uma lista de todos os jogadores cadastrados.",
+                "responses": {
+                    "200": {
+                        "description": "Lista de jogadores recuperada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string",
+                                                "description": "ID do jogador",
+                                                "example": "66c12b2b6dc8b2690ff1ed42"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "Nome do jogador",
+                                                "example": "João Silva"
+                                            },
+                                            "position": {
+                                                "type": "string",
+                                                "description": "Posição do jogador",
+                                                "example": "Atacante"
+                                            },
+                                            "age": {
+                                                "type": "integer",
+                                                "description": "Idade do jogador",
+                                                "example": 25
+                                            },
+                                            "goals": {
+                                                "type": "integer",
+                                                "description": "Número de gols do jogador",
+                                                "example": 12
+                                            },
+                                            "assists": {
+                                                "type": "integer",
+                                                "description": "Número de assistências do jogador",
+                                                "example": 8
+                                            },
+                                            "yellowCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões amarelos do jogador",
+                                                "example": 3
+                                            },
+                                            "redCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões vermelhos do jogador",
+                                                "example": 1
+                                            },
+                                            "taxId": {
+                                                "type": "string",
+                                                "description": "Número de identificação fiscal do jogador",
+                                                "example": "12345678900"
+                                            },
+                                            "profilePictureUrl": {
+                                                "type": "string",
+                                                "description": "URL da foto de perfil do jogador",
+                                                "example": "https://example.com/profile.jpg"
+                                            }
+                                        },
+                                        "required": [
+                                            "_id",
+                                            "name",
+                                            "position",
+                                            "age",
+                                            "goals",
+                                            "assists",
+                                            "yellowCards",
+                                            "redCards",
+                                            "taxId"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getBestScorer": {
+            "get": {
+                "summary": "Obtém o melhor artilheiro",
+                "description": "Retorna o jogador com o maior número de gols.",
+                "responses": {
+                    "200": {
+                        "description": "Melhor artilheiro recuperado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string",
+                                            "description": "ID do jogador",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Nome do jogador",
+                                            "example": "João Silva"
+                                        },
+                                        "position": {
+                                            "type": "string",
+                                            "description": "Posição do jogador",
+                                            "example": "Atacante"
+                                        },
+                                        "age": {
+                                            "type": "integer",
+                                            "description": "Idade do jogador",
+                                            "example": 25
+                                        },
+                                        "goals": {
+                                            "type": "integer",
+                                            "description": "Número de gols do jogador",
+                                            "example": 12
+                                        },
+                                        "assists": {
+                                            "type": "integer",
+                                            "description": "Número de assistências do jogador",
+                                            "example": 8
+                                        },
+                                        "yellowCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões amarelos do jogador",
+                                            "example": 3
+                                        },
+                                        "redCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões vermelhos do jogador",
+                                            "example": 1
+                                        },
+                                        "taxId": {
+                                            "type": "string",
+                                            "description": "Número de identificação fiscal do jogador",
+                                            "example": "12345678900"
+                                        },
+                                        "profilePictureUrl": {
+                                            "type": "string",
+                                            "description": "URL da foto de perfil do jogador",
+                                            "example": "https://example.com/profile.jpg"
+                                        }
+                                    },
+                                    "required": [
+                                        "_id",
+                                        "name",
+                                        "position",
+                                        "age",
+                                        "goals",
+                                        "assists",
+                                        "yellowCards",
+                                        "redCards",
+                                        "taxId"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum jogador encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Mensagem de erro",
+                                            "example": "No best scorer found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getBestAssistant": {
+            "get": {
+                "summary": "Obtém o melhor assistente",
+                "description": "Retorna o jogador com o maior número de assistências.",
+                "responses": {
+                    "200": {
+                        "description": "Melhor assistente recuperado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "_id": {
+                                            "type": "string",
+                                            "description": "ID do jogador",
+                                            "example": "66c12b2b6dc8b2690ff1ed42"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Nome do jogador",
+                                            "example": "João Silva"
+                                        },
+                                        "position": {
+                                            "type": "string",
+                                            "description": "Posição do jogador",
+                                            "example": "Atacante"
+                                        },
+                                        "age": {
+                                            "type": "integer",
+                                            "description": "Idade do jogador",
+                                            "example": 25
+                                        },
+                                        "goals": {
+                                            "type": "integer",
+                                            "description": "Número de gols do jogador",
+                                            "example": 12
+                                        },
+                                        "assists": {
+                                            "type": "integer",
+                                            "description": "Número de assistências do jogador",
+                                            "example": 8
+                                        },
+                                        "yellowCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões amarelos do jogador",
+                                            "example": 3
+                                        },
+                                        "redCards": {
+                                            "type": "integer",
+                                            "description": "Número de cartões vermelhos do jogador",
+                                            "example": 1
+                                        },
+                                        "taxId": {
+                                            "type": "string",
+                                            "description": "Número de identificação fiscal do jogador",
+                                            "example": "12345678900"
+                                        },
+                                        "profilePictureUrl": {
+                                            "type": "string",
+                                            "description": "URL da foto de perfil do jogador",
+                                            "example": "https://example.com/profile.jpg"
+                                        }
+                                    },
+                                    "required": [
+                                        "_id",
+                                        "name",
+                                        "position",
+                                        "age",
+                                        "goals",
+                                        "assists",
+                                        "yellowCards",
+                                        "redCards",
+                                        "taxId"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Nenhum jogador encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Mensagem de erro",
+                                            "example": "No best assistant found"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getScorerList": {
+            "get": {
+                "summary": "Obtém a lista de maiores goleadores",
+                "description": "Retorna uma lista de jogadores ordenada pelo número de gols, do maior para o menor.",
+                "responses": {
+                    "200": {
+                        "description": "Lista de maiores goleadores recuperada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string",
+                                                "description": "ID do jogador",
+                                                "example": "66c12b2b6dc8b2690ff1ed42"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "Nome do jogador",
+                                                "example": "João Silva"
+                                            },
+                                            "position": {
+                                                "type": "string",
+                                                "description": "Posição do jogador",
+                                                "example": "Atacante"
+                                            },
+                                            "age": {
+                                                "type": "integer",
+                                                "description": "Idade do jogador",
+                                                "example": 25
+                                            },
+                                            "goals": {
+                                                "type": "integer",
+                                                "description": "Número de gols do jogador",
+                                                "example": 12
+                                            },
+                                            "assists": {
+                                                "type": "integer",
+                                                "description": "Número de assistências do jogador",
+                                                "example": 8
+                                            },
+                                            "yellowCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões amarelos do jogador",
+                                                "example": 3
+                                            },
+                                            "redCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões vermelhos do jogador",
+                                                "example": 1
+                                            },
+                                            "taxId": {
+                                                "type": "string",
+                                                "description": "Número de identificação fiscal do jogador",
+                                                "example": "12345678900"
+                                            },
+                                            "profilePictureUrl": {
+                                                "type": "string",
+                                                "description": "URL da foto de perfil do jogador",
+                                                "example": "https://example.com/profile.jpg"
+                                            }
+                                        },
+                                        "required": [
+                                            "_id",
+                                            "name",
+                                            "position",
+                                            "age",
+                                            "goals",
+                                            "assists",
+                                            "yellowCards",
+                                            "redCards",
+                                            "taxId"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getAssistantList": {
+            "get": {
+                "summary": "Obtém a lista de maiores assistentes",
+                "description": "Retorna uma lista de jogadores ordenada pelo número de assistências, do maior para o menor.",
+                "responses": {
+                    "200": {
+                        "description": "Lista de maiores assistentes recuperada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "_id": {
+                                                "type": "string",
+                                                "description": "ID do jogador",
+                                                "example": "66c12b2b6dc8b2690ff1ed42"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "Nome do jogador",
+                                                "example": "João Silva"
+                                            },
+                                            "position": {
+                                                "type": "string",
+                                                "description": "Posição do jogador",
+                                                "example": "Atacante"
+                                            },
+                                            "age": {
+                                                "type": "integer",
+                                                "description": "Idade do jogador",
+                                                "example": 25
+                                            },
+                                            "goals": {
+                                                "type": "integer",
+                                                "description": "Número de gols do jogador",
+                                                "example": 12
+                                            },
+                                            "assists": {
+                                                "type": "integer",
+                                                "description": "Número de assistências do jogador",
+                                                "example": 8
+                                            },
+                                            "yellowCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões amarelos do jogador",
+                                                "example": 3
+                                            },
+                                            "redCards": {
+                                                "type": "integer",
+                                                "description": "Número de cartões vermelhos do jogador",
+                                                "example": 1
+                                            },
+                                            "taxId": {
+                                                "type": "string",
+                                                "description": "Número de identificação fiscal do jogador",
+                                                "example": "12345678900"
+                                            },
+                                            "profilePictureUrl": {
+                                                "type": "string",
+                                                "description": "URL da foto de perfil do jogador",
+                                                "example": "https://example.com/profile.jpg"
+                                            }
+                                        },
+                                        "required": [
+                                            "_id",
+                                            "name",
+                                            "position",
+                                            "age",
+                                            "goals",
+                                            "assists",
+                                            "yellowCards",
+                                            "redCards",
+                                            "taxId"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

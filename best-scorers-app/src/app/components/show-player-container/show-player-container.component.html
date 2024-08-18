@@ -1,0 +1,64 @@
+<!-- src/app/player-container/player-container.component.html -->
+<div class="fut-player-card">
+  <div class="player-card-top">
+    <div class="player-master-info">
+      <div class="player-rating">
+        <span>#{{ player.hankNumber }}</span>
+      </div>
+      <div class="player-position">
+        <span>{{ player.position }}</span>
+      </div>
+      <div class="player-nation">
+        <img src="https://cdn-icons-png.flaticon.com/512/37/37672.png" alt="Player Nation" draggable="false" />
+      </div>
+      <div class="player-club">
+        <img src="https://cdn-icons-png.flaticon.com/512/37/37672.png" alt="Player Club" draggable="false" />
+      </div>
+    </div>
+    <div class="player-picture">
+      <img *ngIf="player.profilePictureUrl; else defaultImage" [src]="player.profilePictureUrl"
+        alt="Foto do Jogador Player" draggable="false" />
+      <ng-template #defaultImage>
+        <img src="https://cdn-icons-png.flaticon.com/512/37/37672.png" alt="Foto do Jogador Player" draggable="false" />
+      </ng-template>
+    </div>
+  </div>
+  <div class="player-card-bottom">
+    <div class="player-info">
+      <!-- Player Name -->
+      <div class="player-name">
+        <span>{{ player.name }}</span>
+      </div>
+      <!-- Player Features -->
+      <div class="player-features">
+        <div class="player-features-col">
+          <span>
+            <div class="player-feature-value">{{ player.goals }}</div>
+            <div class="player-feature-title">Gols</div>
+          </span>
+          <span>
+            <div class="player-feature-value">{{ player.assists }}</div>
+            <div class="player-feature-title">ASSIST</div>
+          </span>
+          <span>
+            <div class="player-feature-value">{{ player.yellowCards }}</div>
+            <div class="player-feature-title">AMAR</div>
+          </span>
+        </div>
+        <div class="player-features-col">
+          <span>
+            <div class="player-feature-value">{{ player.redCards }}</div>
+            <div class="player-feature-title">VERM</div>
+          </span>
+          <span>
+            <div class="player-feature-value">{{ player.age }}</div>
+            <div class="player-feature-title">IDADE</div>
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <button *ngIf="isHovered" class="action-button">Detalhes</button>
+</div>

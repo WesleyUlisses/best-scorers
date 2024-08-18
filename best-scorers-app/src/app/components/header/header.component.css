@@ -1,0 +1,246 @@
+.nav-wrapper {
+    background-color: #e9cc74;
+
+    /* vamos adicionar o background color como um grandiente */
+    background: linear-gradient(90deg, #020202 60%, #0C0C0C 100%, #1B1B1B 100%);
+    color: #020202;
+    width: 100%;
+    padding: 0 2.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 30%;
+    align-items: center;
+    height: 5.625rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 1rem;
+}
+
+.apoio-logo {
+    width: auto;
+    height: 4.625rem;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.nav-list-of-header-items.closed {
+    display: none;
+}
+
+.nav-list-of-header-items {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-header {
+    color: #e9cc74;
+    text-decoration: none;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        color: #ffffff;
+    }
+}
+
+.btn-volunteer-auth {
+    background-color: #e9cc74;
+    color: #020202;
+    width: 9.375rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #020202;
+        color: #e9cc74;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 1166px) {
+    
+    .nav-list-of-header-items {
+        display: none;
+    }
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #FFFFFF;
+    }
+
+    .hamburger-menu::before {
+        content: "";
+    }
+
+    .nav-list-of-header-items.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 1000;
+        top: 5.625rem;
+        right: 0;
+        background-color: #e9cc74;
+        width: 25rem;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+        border-top: 0.125rem solid #FFFFFF;
+    }
+
+    .item-header {
+        color: #020202;
+        cursor: pointer;
+    }
+
+    .btn-volunteer-auth {
+        background-color: #020202;
+        color: #e9cc74;
+        cursor: pointer;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    .hamburger-menu::before {
+        content: "";
+    }
+
+}
+
+.nav-list-of-header-items.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+        z-index: 1000;
+    top: 5.625rem;
+    right: 0;
+    background-color: #e9cc74;
+    width: 20rem;
+    height: calc(100vh - 5.625rem);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+
+@media (max-width: 514) {
+    .nav-list-of-header-items.open {
+        display: none;
+        
+    }
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #ffffff;;
+    }
+
+    .hamburger-menu::before {
+        content: "";
+    }
+
+    .item-header {
+        font-size: 0.9rem;
+    }
+
+    .nav-list-of-header-items.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 1000;
+        top: 5.625rem;
+        right: 0;
+        background-color: #e9cc74;
+        width: 15rem;
+        height: calc(100vh - 5.625rem);
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 484){
+
+    .nav-list-of-header-items.open {
+        display: none;
+        
+    }
+
+    .nav-wrapper {
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+
+    .hamburger-menu::before {
+        content: "";
+    }
+
+    .item-header {
+        font-size: 0.9rem;
+    }
+
+    .nav-list-of-header-items.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 1000;
+        top: 5.625rem;
+        right: 0;
+        background-color: #e9cc74;
+        width: 100vh;
+        height: calc(100vh - 5.625rem);
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+}
