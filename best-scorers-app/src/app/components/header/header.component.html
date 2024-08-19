@@ -1,14 +1,14 @@
 <nav class="nav-wrapper">
-    <a (click)="closeMenuIfIsOpen()">
+    <a (click)="closeMenuIfIsOpen()" (click)="goToHome()" href="/home" routerLink="/home">
         <img src="https://seeklogo.com/images/B/base-escudo-time-de-futebol-tematico-brazil-logo-DF890306D7-seeklogo.com.png" alt="Logo do Apoio Ecocrise"
             class="apoio-logo" id="apoio-logo">
     </a>
     <div class="hamburger-menu" (click)="toggleMenu()">&#9776;</div>
     <ul id="nav-list-of-header-items" class="nav-list-of-header-items right hide-on-med-and-down">
-        <li><a routerLink="/" class="item-header" (click)="closeMenuIfIsOpen()">Home</a></li>
+        <li><a href="/home" routerLink="/home" class="item-header" (click)="closeMenuIfIsOpen()" (click)="goToHome()">Home</a></li>
         <li><a  class="item-header" (click)="closeMenuIfIsOpen()">Artilheiro</a></li>
         <li><a  class="item-header" (click)="closeMenuIfIsOpen()" >Passador</a></li>
-        <li><a  routerLink="/apoio" class="item-header" (click)="closeMenuIfIsOpen()" >Artilharia</a></li>
+        <li><a  href="/bestPlayers" routerLink="/bestPlayers" class="item-header" (click)="closeMenuIfIsOpen()" (click)="goToBestPlayers()">Artilharia</a></li>
         <li><a  routerLink="/blog" class="item-header" (click)="closeMenuIfIsOpen()">Melhores Assistentes</a></li>
         <button class="btn-volunteer-auth" (click)="closeMenuIfIsOpen()" >Administrador</button>
     </ul>

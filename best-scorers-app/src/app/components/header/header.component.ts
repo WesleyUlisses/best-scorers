@@ -46,4 +46,13 @@ export class HeaderComponent {
     navList.classList.remove('open');
     navList.style.transition = 'width 2s';
   }
+
+  goToBestPlayers() {
+    this.router.navigate(['/bestPlayers']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
 }
