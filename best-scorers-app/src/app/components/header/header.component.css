@@ -1,9 +1,7 @@
 .nav-wrapper {
     background-color: #e9cc74;
-
-    /* vamos adicionar o background color como um grandiente */
-    background: linear-gradient(90deg, #020202 60%, #0C0C0C 100%, #1B1B1B 100%);
     color: #020202;
+    background: linear-gradient(90deg, #020202 60%, #0C0C0C 100%, #1B1B1B 100%);
     width: 100%;
     padding: 0 2.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

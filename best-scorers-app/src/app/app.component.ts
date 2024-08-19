@@ -6,6 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { HeaderComponent } from './components/header/header.component';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    HeaderComponent],
+    HeaderComponent,
+    FooterComponent,],
   providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
